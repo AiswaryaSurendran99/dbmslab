@@ -1,0 +1,125 @@
+
+SQL> create table employee2(Emp_id int, Emp_name varchar(20),Emp_dept varchar(20
+), Emp_salary int);
+
+Table created.
+
+SQL> create table department2(Dept_id int, Dept_name varchar(20), Head_of_dept v
+archar(20));
+
+Table created.
+
+
+SQL> alter table department2 add primary key(Dept_name);
+
+Table altered.
+
+SQL> alter table employee2 add primary key(Emp_id);
+
+Table altered.
+
+
+SQL> alter table employee2 add foreign key(Emp_dept) references department(Dept_
+name);
+
+Table altered.
+
+
+
+SQL> insert into department2 values(1000,'sales','Aham');
+
+1 row created.
+
+SQL> insert into department2 values(2000,'accounting','Siya');
+
+1 row created.
+
+SQL> insert into department2 values(3000,'marketing','Ram');
+
+1 row created.
+
+SQL> insert into department2 values(4000,'hr','Kavya');
+
+1 row created.
+
+SQL> insert into department2 values(5000,'manager','Ramesh');
+
+1 row created.
+
+SQL> select * from department2;
+
+
+
+   DEPT_ID DEPT_NAME            HEAD_OF_DEPT
+---------- -------------------- --------------------
+      1000 sales                Aham
+      2000 accounting           Siya
+      3000 marketing            Ram
+      4000 hr                   Kavya
+      5000 manager              Ramesh
+
+SQL> insert into employee2 values(101,'Raju','marketing',25000);
+
+1 row created.
+
+SQL>  insert into employee2 values(111,'Ruhi','accounting',35000);
+
+1 row created.
+
+SQL> insert into employee2 values(110,'Hira','hr',35000);
+
+1 row created.
+
+SQL>  insert into employee2 values(100,'Riya','sales',20000);
+
+1 row created.
+
+SQL> insert into employee2 values(200,'Akshai','hr',80000);
+
+1 row created.
+
+SQL> select * from employee2;
+
+
+    EMP_ID EMP_NAME             EMP_DEPT             EMP_SALARY
+---------- -------------------- -------------------- ----------
+       101 Raju                 marketing                 25000
+       111 Ruhi                 accounting                35000
+       110 Hira                 hr                        35000
+       100 Riya                 sales                     20000
+       200 Akshai               hr                        80000
+
+
+
+
+SQL> update employee2 set Emp_salary='40000' where Emp_id=110;
+
+1 row updated.
+
+SQL> select * from employee2;
+
+    EMP_ID EMP_NAME             EMP_DEPT             EMP_SALARY
+---------- -------------------- -------------------- ----------
+       101 Raju                 marketing                 25000
+       111 Ruhi                 accounting                35000
+       110 Hira                 hr                        40000
+       100 Riya                 sales                     20000
+       200 Akshai               hr                        80000
+
+
+
+SQL> delete from employee2 where Emp_id=100;
+
+1 row deleted.
+
+SQL> select * from employee2;
+
+    EMP_ID EMP_NAME             EMP_DEPT             EMP_SALARY
+---------- -------------------- -------------------- ----------
+       101 Raju                 marketing                 25000
+       111 Ruhi                 accounting                35000
+       110 Hira                 hr                        40000
+       200 Akshai               hr                        80000
+
+
+

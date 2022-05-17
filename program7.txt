@@ -1,0 +1,89 @@
+
+SQL> create table students (id int not null, student_name varchar(20),marks int)
+;
+
+Table created.
+
+
+
+SQL> insert into students values(1,'Sanju',64);
+
+1 row created.
+
+SQL> insert into students values(2,'Varun',72);
+
+1 row created.
+
+SQL> insert into students values(3,'Akash',45);
+
+1 row created.
+
+SQL> insert into students values(4,'Rohit',86);
+
+1 row created.
+
+SQL> insert into students values(5,'Anjali',92);
+
+1 row created.
+
+SQL> insert into students values(6,'Ammu',95);
+
+1 row created.
+
+SQL> insert into students values(7,'Rahul',80);
+
+1 row created.
+
+SQL> insert into students values(8,'Prathiba',62);
+
+1 row created.
+
+SQL> insert into students values(9,'Ravi',75);
+
+1 row created.
+
+SQL> insert into students values(10,'Pulkit',76);
+
+1 row created.
+
+SQL> select * from students;
+
+
+        ID STUDENT_NAME              MARKS
+---------- -------------------- ----------
+         1 Sanju                        64
+         2 Varun                        72
+         3 Akash                        45
+         4 Rohit                        86
+         5 Anjali                       92
+         6 Ammu                         95
+         7 Rahul                        80
+         8 Prathiba                     62
+         9 Ravi                         75
+        10 Pulkit                       76
+
+10 rows selected.
+
+SQL> select count(marks) as studentno from students where marks>75;
+
+ STUDENTNO
+----------
+         5
+
+SQL> select avg(marks) from students;
+
+AVG(MARKS)
+----------
+      74.7
+
+SQL> select min(marks) from students;
+
+MIN(MARKS)
+----------
+        45
+
+SQL> select max(marks) from students;
+
+MAX(MARKS)
+----------
+        95

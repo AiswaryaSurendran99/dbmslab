@@ -1,0 +1,46 @@
+
+SQL> create user aiswarya identified by 1999;
+
+User created.
+
+
+
+SQL> connect
+Enter user-name: system
+Enter password:
+Connected.
+SQL> grant create session to aiswarya;
+
+Grant succeeded.
+
+SQL> connect
+Enter user-name: aiswarya
+Enter password:
+Connected.
+SQL> select * from system.employee1;
+
+    EMP_ID EMP_NAME             EMP_DEPT             EMP_SALARY
+---------- -------------------- -------------------- ----------
+       101 Raju                 marketing                 25000
+       111 Ruhi                 accounting                35000
+       110 Hira                 hr                        35000
+       100 Riya                 sales                     20000
+       200 Akshai               hr                        80000
+
+
+
+SQL> connect
+Enter user-name: system
+Enter password:
+Connected.
+
+
+SQL> revoke insert,select on employee1 from aiswarya;
+
+Revoke succeeded.
+
+SQL> commit;
+
+Commit complete.
+
+

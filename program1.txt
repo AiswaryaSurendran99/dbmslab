@@ -1,0 +1,56 @@
+create table student(Roll_No int ,Name varchar(20),Course varchar(20),year int);
+Table created.
+
+
+SQL> alter table student add primary key(Roll_No);
+
+Table altered.
+
+
+SQL> insert into student values(1,'Aiswarya','MCA',2021);
+
+1 row created.
+
+SQL> insert into student values(2,'Anna','MCA',2021);
+
+1 row created.
+
+SQL> insert into student values(3,'Alen','MBA',2021);
+
+1 row created.
+
+SQL> insert into student values(4,'Meena','MCA',2020);
+
+1 row created.
+
+SQL> insert into student values(5,'Mariya','MTECH',2020);
+
+1 row created.
+
+
+SQL> select * from student;
+
+   ROLL_NO NAME                 COURSE                     YEAR
+---------- -------------------- -------------------- ----------
+         1 Aiswarya             MCA                        2021
+         2 Anna                 MCA                        2021
+         3 Alen                 MBA                        2021
+         4 Meena                MCA                        2020
+         5 Mariya               MTECH                      2020
+
+
+SQL> truncate table student;
+
+Table truncated.
+
+SQL> select * from student;
+
+no rows selected
+
+
+SQL> drop table student;
+
+Table dropped.
+
+
+

@@ -1,0 +1,79 @@
+
+
+SQL> select * from employee1;
+
+    EMP_ID EMP_NAME             EMP_DEPT             EMP_SALARY
+---------- -------------------- -------------------- ----------
+       101 Raju                 marketing                 25000
+       111 Ruhi                 accounting                35000
+       110 Hira                 hr                        35000
+       100 Riya                 sales                     20000
+       200 Akshai               hr                        80000
+
+SQL> update employee1 set emp_id=1000 where emp_name='Raju';
+
+1 row updated.
+
+SQL> select * from employee1;
+
+    EMP_ID EMP_NAME             EMP_DEPT             EMP_SALARY
+---------- -------------------- -------------------- ----------
+      1000 Raju                 marketing                 25000
+       111 Ruhi                 accounting                35000
+       110 Hira                 hr                        35000
+       100 Riya                 sales                     20000
+       200 Akshai               hr                        80000
+
+SQL> rollback;
+
+Rollback complete.
+
+SQL> select * from employee1;
+
+    EMP_ID EMP_NAME             EMP_DEPT             EMP_SALARY
+---------- -------------------- -------------------- ----------
+       101 Raju                 marketing                 25000
+       111 Ruhi                 accounting                35000
+       110 Hira                 hr                        35000
+       100 Riya                 sales                     20000
+       200 Akshai               hr                        80000
+
+
+
+
+SQL> savepoint return;
+
+Savepoint created.
+
+SQL> update employee1 set emp_salary=30000 where emp_name='Raju';
+
+1 row updated.
+
+SQL> select * from employee1;
+
+    EMP_ID EMP_NAME             EMP_DEPT             EMP_SALARY
+---------- -------------------- -------------------- ----------
+       101 Raju                 marketing                 30000
+       111 Ruhi                 accounting                35000
+       110 Hira                 hr                        35000
+       100 Riya                 sales                     20000
+       200 Akshai               hr                        80000
+
+SQL> rollback to return;
+
+Rollback complete.
+
+SQL> select * from employee1;
+
+    EMP_ID EMP_NAME             EMP_DEPT             EMP_SALARY
+---------- -------------------- -------------------- ----------
+       101 Raju                 marketing                 25000
+       111 Ruhi                 accounting                35000
+       110 Hira                 hr                        35000
+       100 Riya                 sales                     20000
+       200 Akshai               hr                        80000
+
+
+SQL> commit;
+
+Commit complete.
