@@ -1,0 +1,86 @@
+> use Employee
+switched to db Employee
+> db.createCollection("EMPL")
+{ "ok" : 1 }
+> db.EMPL.insert([{empno:100,name:"Ann",salary:25000,role:"manager"},{empno:101,name:"Manu",salary:55000,role:"hr"},{empno:102,name:"Maya",salary:50000,role:"programmer"},{empno:103,name:"Mann",salary:53000,role:"hr"},{empno:104,name:"Madhav",salary:58000,role:"manager"},{empno:105,name:"Meera",salary:78000,role:"programmer"},{empno:106,name:"Anu",salary:80000,role:"programmer"},{empno:107,name:"Arya",salary:80700,role:"tester"},{empno:108,name:"Ayana",salary:81700,role:"tester"},{empno:109,name:"Ziya",salary:85700,role:"hr"}])
+BulkWriteResult({
+        "writeErrors" : [ ],
+        "writeConcernErrors" : [ ],
+        "nInserted" : 10,
+        "nUpserted" : 0,
+        "nMatched" : 0,
+        "nModified" : 0,
+        "nRemoved" : 0,
+        "upserted" : [ ]
+})
+>  db.EMPL.find().pretty()
+{
+        "_id" : ObjectId("628b8efdd7f14a9f15ccf49e"),
+        "empno" : 100,
+        "name" : "Ann",
+        "salary" : 25000,
+        "role" : "manager"
+}
+{
+        "_id" : ObjectId("628b8efdd7f14a9f15ccf49f"),
+        "empno" : 101,
+        "name" : "Manu",
+        "salary" : 55000,
+        "role" : "hr"
+}
+{
+        "_id" : ObjectId("628b8efdd7f14a9f15ccf4a0"),
+        "empno" : 102,
+        "name" : "Maya",
+        "salary" : 50000,
+        "role" : "programmer"
+}
+{
+        "_id" : ObjectId("628b8efdd7f14a9f15ccf4a1"),
+        "empno" : 103,
+        "name" : "Mann",
+        "salary" : 53000,
+        "role" : "hr"
+}
+{
+        "_id" : ObjectId("628b8efdd7f14a9f15ccf4a2"),
+        "empno" : 104,
+        "name" : "Madhav",
+        "salary" : 58000,
+        "role" : "manager"
+}
+{
+        "_id" : ObjectId("628b8efdd7f14a9f15ccf4a3"),
+        "empno" : 105,
+        "name" : "Meera",
+        "salary" : 78000,
+        "role" : "programmer"
+}
+{
+        "_id" : ObjectId("628b8efdd7f14a9f15ccf4a4"),
+        "empno" : 106,
+        "name" : "Anu",
+        "salary" : 80000,
+        "role" : "programmer"
+}
+{
+        "_id" : ObjectId("628b8efdd7f14a9f15ccf4a5"),
+        "empno" : 107,
+        "name" : "Arya",
+        "salary" : 80700,
+        "role" : "tester"
+}
+{
+        "_id" : ObjectId("628b8efdd7f14a9f15ccf4a6"),
+        "empno" : 108,
+        "name" : "Ayana",
+        "salary" : 81700,
+        "role" : "tester"
+}
+{
+        "_id" : ObjectId("628b8efdd7f14a9f15ccf4a7"),
+        "empno" : 109,
+        "name" : "Ziya",
+        "salary" : 85700,
+        "role" : "hr"
+}

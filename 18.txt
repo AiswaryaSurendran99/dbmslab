@@ -1,0 +1,115 @@
+ use movie
+switched to db movie
+> db.createCollection("MovieDetails")
+{ "ok" : 1 }
+> db.MovieDetails.insert([{Title:"Titanic",Writer:"James Cameron",Year:1997,Actors:"Leo and Kate"},{Title:"Avatar",Writer:"James Cameron",Year:2009,Actors:"Sam and Zoe"},{Title:"Charlie and the Chocolate Factory",Writer:"Tim Burton",Year:2005,Actors:"Johnny Depp and Helena"},{Title:"Pirates of the Caribbean",Writer:"Ted Elliott",Year:2003,Actors:"Johnny Depp and Young"},{Title:"Aquaman",Writer:"James Wan",Year:2021,Actors:"Jason and Amber Heard"},{Title:"Wonder Woman",Writer:"Patty Jenkins",Year:2017,Actors:"Gal Gadot and Chris"},{Title:"Sky High",Writer:"Mike",Year:2005,Actors:"Kelly and Mark"},{Title:"Forrest Gump ",Writer:"Eric Roth",Year:1994,Actors:"Tom and Gary"},{Title:"Interstellar ",Writer:" Christopher Nolan",Year:2014,Actors:"Matthew and Anne"},{Title:"Bird Box ",Writer:"Josh ",Year:2013,Actors:"Rosh and Sandra"}])
+BulkWriteResult({
+        "writeErrors" : [ ],
+        "writeConcernErrors" : [ ],
+        "nInserted" : 10,
+        "nUpserted" : 0,
+        "nMatched" : 0,
+        "nModified" : 0,
+        "nRemoved" : 0,
+        "upserted" : [ ]
+})
+> db.MovieDetails.find().pretty();
+{
+        "_id" : ObjectId("628bab1dfbdfc8be75415888"),
+        "Title" : "Titanic",
+        "Writer" : "James Cameron",
+        "Year" : 1997,
+        "Actors" : "Leo and Kate"
+}
+{
+        "_id" : ObjectId("628bab1dfbdfc8be75415889"),
+        "Title" : "Avatar",
+        "Writer" : "James Cameron",
+        "Year" : 2009,
+        "Actors" : "Sam and Zoe"
+}
+{
+        "_id" : ObjectId("628bab1dfbdfc8be7541588a"),
+        "Title" : "Charlie and the Chocolate Factory",
+        "Writer" : "Tim Burton",
+        "Year" : 2005,
+        "Actors" : "Johnny Depp and Helena"
+}
+{
+        "_id" : ObjectId("628bab1dfbdfc8be7541588b"),
+        "Title" : "Pirates of the Caribbean",
+        "Writer" : "Ted Elliott",
+        "Year" : 2003,
+        "Actors" : "Johnny Depp and Young"
+}
+{
+        "_id" : ObjectId("628bab1dfbdfc8be7541588c"),
+        "Title" : "Aquaman",
+        "Writer" : "James Wan",
+        "Year" : 2021,
+        "Actors" : "Jason and Amber Heard"
+}
+{
+        "_id" : ObjectId("628bab1dfbdfc8be7541588d"),
+        "Title" : "Wonder Woman",
+        "Writer" : "Patty Jenkins",
+        "Year" : 2017,
+        "Actors" : "Gal Gadot and Chris"
+}
+{
+        "_id" : ObjectId("628bab1dfbdfc8be7541588e"),
+        "Title" : "Sky High",
+        "Writer" : "Mike",
+        "Year" : 2005,
+        "Actors" : "Kelly and Mark"
+}
+{
+        "_id" : ObjectId("628bab1dfbdfc8be7541588f"),
+        "Title" : "Forrest Gump ",
+        "Writer" : "Eric Roth",
+        "Year" : 1994,
+        "Actors" : "Tom and Gary"
+}
+{
+        "_id" : ObjectId("628bab1dfbdfc8be75415890"),
+        "Title" : "Interstellar ",
+        "Writer" : " Christopher Nolan",
+        "Year" : 2014,
+        "Actors" : "Matthew and Anne"
+}
+{
+        "_id" : ObjectId("628bab1dfbdfc8be75415891"),
+        "Title" : "Bird Box ",
+        "Writer" : "Josh ",
+        "Year" : 2013,
+        "Actors" : "Rosh and Sandra"
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

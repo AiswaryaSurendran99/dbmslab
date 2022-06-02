@@ -1,0 +1,233 @@
+> use Employee
+switched to db Employee
+> show collections;
+EMPL
+> db.EMPL.find().pretty()
+{
+        "_id" : ObjectId("628b8efdd7f14a9f15ccf49e"),
+        "empno" : 100,
+        "name" : "Ann",
+        "salary" : 25000,
+        "role" : "manager"
+}
+{
+        "_id" : ObjectId("628b8efdd7f14a9f15ccf49f"),
+        "empno" : 101,
+        "name" : "Manu",
+        "salary" : 55000,
+        "role" : "hr"
+}
+{
+        "_id" : ObjectId("628b8efdd7f14a9f15ccf4a0"),
+        "empno" : 102,
+        "name" : "Maya",
+        "salary" : 50000,
+        "role" : "programmer"
+}
+{
+        "_id" : ObjectId("628b8efdd7f14a9f15ccf4a1"),
+        "empno" : 103,
+        "name" : "Mann",
+        "salary" : 53000,
+        "role" : "hr"
+}
+{
+        "_id" : ObjectId("628b8efdd7f14a9f15ccf4a2"),
+        "empno" : 104,
+        "name" : "Madhav",
+        "salary" : 58000,
+        "role" : "manager"
+}
+{
+        "_id" : ObjectId("628b8efdd7f14a9f15ccf4a3"),
+        "empno" : 105,
+        "name" : "Meera",
+        "salary" : 78000,
+        "role" : "programmer"
+}
+{
+        "_id" : ObjectId("628b8efdd7f14a9f15ccf4a4"),
+        "empno" : 106,
+        "name" : "Anu",
+        "salary" : 80000,
+        "role" : "programmer"
+}
+{
+        "_id" : ObjectId("628b8efdd7f14a9f15ccf4a5"),
+        "empno" : 107,
+        "name" : "Arya",
+        "salary" : 80700,
+        "role" : "tester"
+}
+{
+        "_id" : ObjectId("628b8efdd7f14a9f15ccf4a6"),
+        "empno" : 108,
+        "name" : "Ayana",
+        "salary" : 81700,
+        "role" : "tester"
+}
+{
+        "_id" : ObjectId("628b8efdd7f14a9f15ccf4a7"),
+        "empno" : 109,
+        "name" : "Ziya",
+        "salary" : 85700,
+        "role" : "hr"
+}
+{
+        "_id" : ObjectId("628bb062fbdfc8be75415895"),
+        "empno" : 155,
+        "name" : "RS",
+        "salary" : 78800,
+        "role" : "programmer"
+}
+{
+        "_id" : ObjectId("628bb062fbdfc8be75415896"),
+        "empno" : 136,
+        "name" : "Karthik",
+        "salary" : 80500,
+        "role" : "programmer"
+}
+{
+        "_id" : ObjectId("628bb062fbdfc8be75415897"),
+        "empno" : 127,
+        "name" : "Saya",
+        "salary" : 81700,
+        "role" : "hr"
+}
+{
+       
+        "_id" : ObjectId("628bb290fbdfc8be75415898"),
+        "empno" : 145,
+        "name" : "ST",
+        "salary" : 48800,
+        "role" : "programmer"
+}
+> db.EMPL.find({name:/^S/})
+{ "_id" : ObjectId("628bb062fbdfc8be75415897"), "empno" : 127, "name" : "Saya", "salary" : 81700, "role" : "hr" }
+{ "_id" : ObjectId("628bb290fbdfc8be75415898"), "empno" : 145, "name" : "ST", "salary" : 48800, "role" : "programmer" }
+
+> db.EMPL.find({name:/k$/})
+{ "_id" : ObjectId("628bb062fbdfc8be75415896"), "empno" : 136, "name" : "Karthik", "salary" : 80500, "role" : "programmer" }
+
+
+> db.EMPL.find({name:{$regex:"\s",$options:"i"}})
+{ "_id" : ObjectId("628bb062fbdfc8be75415895"), "empno" : 155, "name" : "RS", "salary" : 78800, "role" : "programmer" }
+{ "_id" : ObjectId("628bb062fbdfc8be75415897"), "empno" : 127, "name" : "Saya", "salary" : 81700, "role" : "hr" }
+{ "_id" : ObjectId("628bb290fbdfc8be75415898"), "empno" : 145, "name" : "ST", "salary" : 48800, "role" : "programmer" }
+
+
+> db.EMPL.update({name:"ST"},{$inc:{salary:8000}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+
+
+> db.EMPL.update({},{$inc:{salary:4000}},{multi:true})
+WriteResult({ "nMatched" : 14, "nUpserted" : 0, "nModified" : 14 })
+
+> db.EMPL.update({name:"RS"},{$set:{remark:"WC"}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+
+
+
+
+ db.EMPL.find().pretty()
+{
+        "_id" : ObjectId("628b8efdd7f14a9f15ccf49e"),
+        "empno" : 100,
+        "name" : "Ann",
+        "salary" : 29000,
+        "role" : "manager"
+}
+{
+        "_id" : ObjectId("628b8efdd7f14a9f15ccf49f"),
+        "empno" : 101,
+        "name" : "Manu",
+        "salary" : 59000,
+        "role" : "hr"
+}
+{
+        "_id" : ObjectId("628b8efdd7f14a9f15ccf4a0"),
+        "empno" : 102,
+        "name" : "Maya",
+        "salary" : 54000,
+        "role" : "programmer"
+}
+{
+        "_id" : ObjectId("628b8efdd7f14a9f15ccf4a1"),
+        "empno" : 103,
+        "name" : "Mann",
+        "salary" : 57000,
+        "role" : "hr"
+}
+{
+        "_id" : ObjectId("628b8efdd7f14a9f15ccf4a2"),
+        "empno" : 104,
+        "name" : "Madhav",
+        "salary" : 62000,
+        "role" : "manager"
+}
+{
+        "_id" : ObjectId("628b8efdd7f14a9f15ccf4a3"),
+        "empno" : 105,
+        "name" : "Meera",
+        "salary" : 82000,
+        "role" : "programmer"
+}
+{
+        "_id" : ObjectId("628b8efdd7f14a9f15ccf4a4"),
+        "empno" : 106,
+        "name" : "Anu",
+        "salary" : 84000,
+        "role" : "programmer"
+}
+{
+        "_id" : ObjectId("628b8efdd7f14a9f15ccf4a5"),
+        "empno" : 107,
+        "name" : "Arya",
+        "salary" : 84700,
+        "role" : "tester"
+}
+{
+        "_id" : ObjectId("628b8efdd7f14a9f15ccf4a6"),
+        "empno" : 108,
+        "name" : "Ayana",
+        "salary" : 85700,
+        "role" : "tester"
+}
+{
+        "_id" : ObjectId("628b8efdd7f14a9f15ccf4a7"),
+        "empno" : 109,
+        "name" : "Ziya",
+        "salary" : 89700,
+        "role" : "hr"
+}
+{
+        "_id" : ObjectId("628bb062fbdfc8be75415895"),
+        "empno" : 155,
+        "name" : "RS",
+        "salary" : 82800,
+        "role" : "programmer",
+        "remark" : "WC"
+}
+{
+        "_id" : ObjectId("628bb062fbdfc8be75415896"),
+        "empno" : 136,
+        "name" : "Karthik",
+        "salary" : 84500,
+        "role" : "programmer"
+}
+{
+        "_id" : ObjectId("628bb062fbdfc8be75415897"),
+        "empno" : 127,
+        "name" : "Saya",
+        "salary" : 85700,
+        "role" : "hr"
+}
+{
+        "_id" : ObjectId("628bb290fbdfc8be75415898"),
+        "empno" : 145,
+        "name" : "ST",
+        "salary" : 60800,
+        "role" : "programmer"
+}
+>
+
