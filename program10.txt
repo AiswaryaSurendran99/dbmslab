@@ -1,0 +1,132 @@
+SQL> create table Sailors(sid int,sname varchar(20),rating int, age real);
+
+Table created.
+
+SQL> insert into Sailors values(22,'Dustin',7,45.0);
+
+1 row created.
+
+SQL> insert into Sailors values(29,'Brutus',1,33.0);
+
+1 row created.
+
+SQL> insert into Sailors values(31,'Lubber',8,55.5);
+
+1 row created.
+
+SQL> insert into Sailors values(32,'Andy',8,25.5);
+
+1 row created.
+
+SQL> insert into Sailors values(58,'Rusty',10,35.0);
+
+1 row created.
+
+SQL> insert into Sailors values(64,'Horatio',7,35.0);
+
+1 row created.
+
+SQL> insert into Sailors values(71,'Zorba',10,16.0);
+
+1 row created.
+
+SQL> insert into Sailors values(74,'Horatio',9,35.0);
+
+1 row created.
+
+SQL> insert into Sailors values(85,'Art',3,25.5);
+
+1 row created.
+
+SQL> insert into Sailors values(95,'Bob',3,63.5);
+
+1 row created.
+
+
+SQL> create table Boats(bid int,bname varchar(20),color varchar(20));
+
+Table created.
+
+SQL> insert into Boats values(101,'Interlake','blue');
+
+1 row created.
+
+SQL> insert into Boats values(102,'Interlake','red');
+
+1 row created.
+
+SQL> insert into Boats values(103,'Clipper','green');
+
+1 row created.
+
+SQL> insert into Boats values(104,'Marine','red');
+
+1 row created.
+
+
+SQL> create table reserves(sid int , bid int, day varchar(50));
+
+Table created.
+
+SQL> insert into  reserves values(22,101,'10/10/98');
+
+1 row created.
+
+SQL> insert into  reserves values(22,102,'10/10/98');
+
+1 row created.
+
+SQL> insert into  reserves values(22,103,'10/8/98');
+
+1 row created.
+
+SQL> insert into  reserves values(22,104,'10/7/98');
+
+1 row created.
+
+SQL> insert into  reserves values(31,102,'11/10/98');
+
+1 row created.
+
+SQL> insert into  reserves values(31,103,'11/6/98');
+
+1 row created.
+
+SQL> insert into  reserves values(31,104,'11/12/98');
+
+1 row created.
+
+SQL> insert into  reserves values(64,101,'9/5/98');
+
+1 row created.
+
+SQL> insert into  reserves values(64,102,'9/8/98');
+
+1 row created.
+
+SQL> insert into  reserves values(74,103,'9/8/98');
+
+1 row created.
+
+A) select sname,age from Sailors where age in(select min(age) from Sailors);
+   SNAME	AGE
+   Zorba	16
+
+B) select rating,avg(age) from Sailors group by rating;
+   RATING	AVG(AGE)
+    7	  40
+    1	  33
+    8	  40.5
+    10  25.5
+    9	  35
+    3	  44.5
+   6 rows selected.
+
+C) select count(distinct sname) from Sailors;
+   COUNT(DISTINCTSNAME)
+   --------------------
+          9	
+D) select avg(age) from Sailors
+   AVG(AGE)
+   --------
+    36.9
